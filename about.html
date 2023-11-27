@@ -403,14 +403,15 @@
             background-position: center; /* 背景图片居中 */
             position: relative; /* 为伪元素定位做准备 */
             flex-direction: column;
-            margin: 0 20px 80px 20px;
+            margin: 0 20px 0px 20px;
             border-radius: 48px;
             border: 1px solid #ccc;
             overflow: hidden;
+            box-shadow: 4px 8px 10px #0002 inset;
         }
         @media (min-width: 1530px) {
             .comment-container {
-                margin: 0 auto 80px auto; 
+                margin: 0 auto 0px auto; 
             }
         }
         .comment-card{
@@ -425,8 +426,9 @@
             justify-content: space-between;
             align-items: center;
             font-size: 15px;
-            background-color: #fff.36;
+            background-color: #fff5;
             backdrop-filter: blur(8px);
+            box-shadow: 4px 8px 20px #0002;
         }
         .comment-card-col{
             display: flex;
@@ -454,6 +456,37 @@
             bottom: 16px;
             right: 36px;
 
+        }
+        .button-container{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1500px;
+        }
+        .button-col{
+            width: 16%;
+        }
+        .server-buttom a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #97E44A;
+            height: 42px;
+            width: 150px;
+            text-decoration: none;
+            border-radius: 48px;
+            color: #444;
+            letter-spacing: 2px;
+            /* margin-bottom: 20px; */
+            margin: 40px auto 40px auto;
+        }
+
+        .server-buttom a:hover{
+            border: 1px solid transparent;
+            background-color: #97E44A;
+            color: #000;
         }
         .footer-container-container{
             height: 100%;
@@ -561,7 +594,7 @@
                 <li class="main-li li-a"><a href="goods.html">植物</a></li>
                 <li class="main-li li-b"><a href="">盆器與配件</a></li>
                 <li class="main-li li-c"><a href="">護理指南</a></li>
-                <li class="main-li li-d"><a href="">服務</a></li>
+                <li class="main-li li-d"><a href="server.html">服務</a></li>
                 <li class="main-li main-about-li li-e">
                     <a href="about.html">關於</a>
                     <ul class="about-ul">
@@ -677,6 +710,18 @@
                 <div class="comment-card-gndv"><img src="images/logo/GreenDivLogo-09.svg" alt=""></div>
             </div>
         <div class="comment-card-logo"><img src="images/logo/GreenDivLogo-08.svg" alt=""></div>
+        </div>
+    </div>
+    <div class="button-container">
+        <div class="button-col">
+            <div class="server-buttom">
+                <a href=""><p>與我們聯絡</p></a>
+            </div>
+        </div>
+        <div class="button-col">
+            <div class="server-buttom">
+                <a href=""><p>我們的服務</p></a>
+            </div>
         </div>
     </div>
     <div class="leaves-container">
