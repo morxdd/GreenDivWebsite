@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .menu-item > *:first-child {
+    flex: 1;
+    line-height: 38px;
+    text-align: center;
+}
+  
+.menu-item > *:first-child:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+  
+.menu-item:hover .dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    top: 38px;
+    padding: 8px;
+    border: solid 1px #ccc;
+    list-style: none;
+    line-height: 38px;
+}
+  
+  .menu-item .dropdown {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+</style>
+<body>
+    <nav class="navigation">
+        <ul class="menu">
+            <li class="menu-item">
+                <label for="menu-item-1"><a class="active" href="index.html">首頁</a></label>
+                <input id="menu-item-1" type="checkbox" hidden="hidden">
+                <ul class="dropdown">
+                    <li>分頁</li>
+                    <li>分頁二</li>
+                </ul>
+             </li>
+            
+            <li class="menu-item">
+                <label for="menu-item-2"><a href="HTML.html">HTML</a></label>
+                <input id="menu-item-2" type="checkbox" hidden="hidden">
+                    <ul class="dropdown">
+                        <li>Item 2-1</li>
+                        <li>Item 2-1</li>
+                    </ul>
+            </li>   
+            
+            <li class="menu-item">
+                <label for="menu-item-3"><a href="CSS.html">CSS</a></label>
+                <input id="menu-item-3" type="checkbox" hidden="hidden">
+                    <ul class="dropdown">
+                        <li>Item 3-1</li>
+                        <li>Item 3-1</li>
+                    </ul>
+            </li>
+            <li class="menu-item">
+                <label for="menu-item-4">
+                <ahref="JavaScript.html">JavaScript</a</label>
+                <input id="menu-item-4" type="checkbox" hidden="hidden">
+                    <ul class="dropdown">
+                        <li>Item 4-1</li>
+                        <li>Item 4-1</li>
+                    </ul>
+            </li> 
+        </ul>
+    </nav>
+</body>
+</html>
