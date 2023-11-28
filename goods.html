@@ -149,7 +149,7 @@
             color: #444;
         }
         .goods-banner-textbox-title{
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 700;
             padding: 12px;
         }
@@ -248,6 +248,7 @@
             left: calc((25%)*-1);
             line-height: 2.2;
             font-weight: 400;
+            
         }
         .pane-title{
             font-size: 18px;
@@ -273,27 +274,39 @@
             margin: 20px 0;
             align-self: center;
         }
-        .goods-container{
+        .goods-container-row{
             height: 100%;       
             width: 100%;   
             transition: .5s ease; 
-            gap: 40px;
+            
             display: flex;
             flex-direction: column;
+            align-items: center;
+            
+        }
+        .goods-container{
+            width: 84%;
+            transition: .5s ease;
+            
         }
         .toggle-filter-checkbox:checked ~ .filter-row .filter-pane {
             left: 0;
         }
+        .toggle-filter-checkbox:checked ~ .filter-row .goods-container-row {
+            width: calc(75% - -10px);
+        }
         .toggle-filter-checkbox:checked ~ .filter-row .goods-container {
-            width: calc(75% - 10px);
+            width: calc(100% - 20px);
+            transform: translateX(10px);
+
         }
         .toggle-filter-checkbox{
             display: none;
         }
         .goods-row{
-
             display: flex;
             justify-content: space-between;
+            margin: 0px 0 40px 0;
         }
         .goods-card{
             background-color: #fff;
@@ -472,7 +485,7 @@
                     <a href="about.html">關於</a>
                     <ul class="about-ul">
                         <li class="about-li"><a href="about.html">關於我們</a></li>
-                        <li class="about-li"><a href="">聯絡我們</a></li>
+                        <li class="about-li"><a href="contact.html">聯絡我們</a></li>
                     </ul>
                 </li>
             </ul>
@@ -544,7 +557,8 @@
             <div class="pane-line"></div>
             <p class="pane-title"><a href="#">促銷商品</a></p>           
             </div>
-            <div class="goods-container">
+            <div class="goods-container-row">
+                <div class="goods-container">
                 <div class="goods-row">
                     <div class="goods-card">
                         <div class="goods-card-pic"><a href="#"><img src="images/plants/1.jpg" alt=""></a></div>
@@ -831,6 +845,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
@@ -851,7 +866,7 @@
                     <div class="footer-info-2nd">
                         <div class="footer-info-title footer-info-2nd">聯絡資訊</div>
                             <div class="footer-info-text-2nd">
-                            <div class="footer-info-text footer-info-text-2nd">客服專線：0800-231-099</div>
+                            <div class="footer-info-text footer-info-text-2nd">客服專線：03 - 2560883</div>
                             <div class="footer-info-text footer-info-text-2nd">客服時間：週二至週六 9:00-15:00</div>
                             <div class="footer-info-text footer-info-text-2nd">信箱：<a href="">service.taiwan@green.div.com</a></div>
                         </div>

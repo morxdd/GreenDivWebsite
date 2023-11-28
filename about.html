@@ -180,11 +180,13 @@
             justify-content: center;
             align-items: center;
             width: calc(33.333333% - 10px);
-            color: #444;
+            color: #666;
         }
         .who-textbox-title{
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 30px;
+            font-weight: 300;
+            letter-spacing: 10px;
+            color: #655D5D;
         }
         .who-textbox-line{
             background-color: #5EAAA5;
@@ -346,7 +348,6 @@
             width: 2px;
             flex-grow: 1;
         }
-
         .ecoth-card{
             display: flex;
             flex-direction: column;
@@ -356,8 +357,7 @@
             color: #444;
             aspect-ratio: 4/3;
             width: 100%;
-            padding: 80px 0;
-            
+            padding: 80px 0;            
         }
         .ecoth-card-title{
             display: flex;
@@ -390,7 +390,13 @@
             width: 84%;
             letter-spacing: 1px;
             line-height: 1.4;
-            
+        }
+        .ecoth-col .ecoth-card:first-child {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .ecoth-col .ecoth-card:nth-child(2) {
+            border-bottom: 1px solid #ccc;
         }
         .comment-container{
             display:flex;
@@ -401,6 +407,7 @@
             height: 500px;
             background-size: cover; /* 背景图片覆盖整个元素 */
             background-position: center; /* 背景图片居中 */
+            background-attachment: fixed; /* 固定背景图片 */
             position: relative; /* 为伪元素定位做准备 */
             flex-direction: column;
             margin: 0 20px 0px 20px;
@@ -599,7 +606,7 @@
                     <a href="about.html">關於</a>
                     <ul class="about-ul">
                         <li class="about-li"><a href="about.html">關於我們</a></li>
-                        <li class="about-li"><a href="">聯絡我們</a></li>
+                        <li class="about-li"><a href="contact.html">聯絡我們</a></li>
                     </ul>
                 </li>
             </ul>
@@ -767,7 +774,7 @@
                     <div class="footer-info-2nd">
                         <div class="footer-info-title footer-info-2nd">聯絡資訊</div>
                             <div class="footer-info-text-2nd">
-                            <div class="footer-info-text footer-info-text-2nd">客服專線：0800-231-099</div>
+                            <div class="footer-info-text footer-info-text-2nd">客服專線：03 - 2560883</div>
                             <div class="footer-info-text footer-info-text-2nd">客服時間：週二至週六 9:00-15:00</div>
                             <div class="footer-info-text footer-info-text-2nd">信箱：<a href="">service.taiwan@green.div.com</a></div>
                         </div>
