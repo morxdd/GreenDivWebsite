@@ -143,7 +143,6 @@
         }
         .product-subcol {
             width: calc(16.666666% - 10px);
-            background-color: cornflowerblue;
             max-height: calc((100vw - 40px) / 2);
             overflow-y: auto;
         }
@@ -162,6 +161,16 @@
             background-color: #444;
             border-radius: 48px;
             margin-bottom: 20px;
+            overflow: hidden;
+
+        }
+        .product-subcol-imagebox img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center 64%;
+            cursor: pointer;
         }
         .product-subcol-imagebox:last-child {
             margin-bottom: 0;
@@ -169,7 +178,6 @@
         .product-maincol-imagebox {
             width: calc(50% - 10px);
             aspect-ratio: 1/1;
-            background-color: cornflowerblue;
             border-radius: 48px;
             overflow: hidden;
         }
@@ -200,7 +208,7 @@
             box-sizing: border-box;
             padding: 0 20px;
         }
-        .product-details-title{
+        .product-details-title{ 
             font-size: 32px;
             font-weight: 300;
             color: #444;
@@ -232,45 +240,346 @@
             flex-direction: column;
         }
         .product-details-textbox > .dot-p {
-            background-color: #ccc;
             text-indent: -1em; /* 将首行向左缩进 */
             padding-left: 1em; /* 为了对齐，向左添加相同大小的内边距 */
         }
         .product-details-option{
-            background-color: antiquewhite;
             margin-bottom: 12px;
         }
         .product-details-option-text {
             font-size: 20px;
             margin-bottom: 12px;
             letter-spacing: .1em;
+            box-sizing: border-box;
+            padding: 0 12px;
         }
         .product-details-option-bottonbox {
             box-sizing: border-box;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            gap: 20px;
         }
         .option-botton {
-            background-color: darkseagreen;
+            background-color: #fff;
+            border: 2px solid #ccc;
             display: block;
-            padding: 12px;
+            padding: 8px 12px;
             border-radius: 12px;
             cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        .option-botton:hover{
+            background-color: #eee8;
+            border: 2px solid #999;
+        }
+        .sbtn2 {
+            background-color: #eee8;
+            border: 2px solid #20B2AA;
+        }
+        .sbtn2:hover {
+            border: 2px solid #20B2AA;
+        }
+        .pbtn3 {
+            background-color: #eee8;
+            border: 2px solid #20B2AA;
+        }
+        .pbtn3:hover {
+            border: 2px solid #20B2AA;
         }
         .product-details-option-colorbox {
             box-sizing: border-box;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
+            margin: 24px 0;
         }
         .option-color {
             background-color: #fa0;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 200px;
             cursor: pointer;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5);
         }
+        .color1 {
+            background-color: #eee;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #20B2AA; /* 红色边框 */
+        }
+        .color2 {
+            background-color: #716E68;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #ccc; /* 红色边框 */
+        }
+        .color3 {
+            background-color: #AF5145;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #ccc; /* 红色边框 */
+        }
+        .color4 {
+            background-color: #4F52A4;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #ccc; /* 红色边框 */
+        }
+        .color5 {
+            background-color: #B5B0A6;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #ccc; /* 红色边框 */
+        }
+        .color2:hover {
+            background-color: #716E68;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #999; /* 红色边框 */
+        }
+        .color3:hover  {
+            background-color: #AF5145;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #999; /* 红色边框 */
+        }
+        .color4:hover  {
+            background-color: #4F52A4;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #999; /* 红色边框 */
+        }
+        .color5:hover  {
+            background-color: #B5B0A6;
+            box-shadow: inset .6px 2.4px 4px rgba(0, 0, 0, 0.5),
+                        0 0 0 4px white, /* 间隙，使用与背景相同的颜色 */
+                        0 0 0 6px #999; /* 红色边框 */
+        }
+
+
+
+        .product-details-pricebox{
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 20px;
+            align-items: center;
+        }
+        .product-details-price {
+            font-size: 32px;
+            font-weight: 300;
+            color: #444;
+            display: block;
+        }
+        .product-details-add a{
+            background-color: #fff;
+            color: #444;
+            padding: 6px 20px;
+            display: block;
+            text-decoration: none;
+            border-radius: 20px;
+            border: 1px solid #777;
+        }
+        .newpin-container{
+            max-width:1500px ;
+            display: flex;
+            flex-direction: column;
+            margin: 0px 20px 0px 20px;
+            padding: 20px 0;
+
+            /* height: 460px; */
+            background-color:#fff;
+            align-items: center;
+            justify-content: end;
+        }
+        @media (min-width: 1530px) {
+            .newpin-container {
+                margin: 0px auto 0px auto; 
+
+            }
+        }
+        .newpin-tietle{
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 300;
+            letter-spacing: 10px;
+            color: #655D5D;
+
+        }
+        .newpin-scroll{
+            display: flex;
+            flex-direction: row;
+            background-color: #fff;
+        }
+        .newpin-cards{
+            display: flex;
+            justify-self: center;
+            gap:20px;
+        }
+        .newpin-card{
+            /* height: 400px; */
+            background-color: #fff;
+            width: calc(100% - 10px);
+        }
+        .newpin-text{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0 24px 0;
+            color: #555;
+            
+        }
+        .newpin-item {
+            overflow: hidden; /* 隐藏超出的部分 */
+            display: block; /* 或者 inline-block，取决于您的布局需求 */
+            border-radius: 48px;
+        }
+
+        .newpin-item img{
+            width: 100%;
+            display: block;
+            border-radius: 48px;
+            overflow: hidden;
+            transform-origin: 50% 80%;
+            transition: transform 0.3s ease
+        }
+
+        .newpin-text-tietle{
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0px 0 6px 0;
+        }
+        .newpin-text-tietle a{
+            text-decoration: none;
+            color: #555;
+            background-color: #fff;
+            display: block;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+        .newpin-text-tietle a:hover {
+            text-decoration: none;
+            
+            color: #222;
+        }
+        .newpin-card:hover .newpin-text-tietle a {
+        /* 这里添加您希望的hover样式 */
+            color: #111; 
+        }
+        .newpin-card:hover .newpin-text-price {
+        /* 觸摸父元素 子元素變化 */
+            color: #111; 
+        }
+        .newpin-card:hover .newpin-item img {
+            transform: scale(1.1);
+        }
+        .newpin-text-price{
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .footer-container-container{
+            height: 100%;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            background-color: #655D5D;
+        }
+        .footer-container{
+            display:flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            background-color: #655D5D;
+            height: 320px;
+            position: relative; 
+            flex-direction: column;
+            max-width: 1500px;
+        }
+        .footer-row{
+            display: flex;
+            width: 84%;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+
+        }
+        .footer-logos{
+
+            width: 150px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .footer-logos img{
+            width: 100%;
+        }
+        .footer-logos-icons{
+            display: flex;
+            flex-direction: row;
+            gap:10px;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .footer-icon{
+            width: 30px;
+        }
+        .footer-buttom{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #ccc;
+            font-weight: 300;
+            border-top: 1px solid #ccc;
+            width: 96%;
+        }
+        .footer-infos{
+
+            width: 50%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.5;
+        }
+        .footer-info-title{
+            color: #fff;
+            padding: 8px 0;
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: -12px;
+            
+        }
+        .footer-info-text-1st{
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-between;
+        }
+        .footer-info-text{
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        .footer-info-text a{
+            color: #ccc;
+        }
+        .footer-info-text a:hover{
+            color: #97E44A;
+            text-decoration: none;
+        }
+
 
 
         </style>
@@ -303,10 +612,10 @@
     </header>
     <div class="product-container">
         <div class="product-subcol">
-            <div class="product-subcol-imagebox"></div>
-            <div class="product-subcol-imagebox"></div>
-            <div class="product-subcol-imagebox"></div>
-            <div class="product-subcol-imagebox"></div>
+            <div class="product-subcol-imagebox"><img src="../images/details/bird-of-paradise_01.webp" alt=""></div>
+            <div class="product-subcol-imagebox"><img src="../images/details/bird-of-paradise_02.webp" alt=""></div>
+            <div class="product-subcol-imagebox"><img src="../images/details/bird-of-paradise_03.webp" alt=""></div>
+            <div class="product-subcol-imagebox"><img src="../images/details/bird-of-paradise_04.webp" alt=""></div>
         </div>
         <div class="product-maincol-imagebox"><img src="../images/plants/23.jpg" alt=""></div>
         <div class="product-details-col">
@@ -323,9 +632,9 @@
                 <p>
                     天堂鳥擁有寬闊、生氣勃勃的綠葉，為任何房間帶來一絲熱帶風情。它因其獨特的花朵而得名，花朵類似於飛行中色彩鮮豔的鳥類（儘管在氣候溫和的室內植物環境中，這些花朵通常不會開花）。天堂鳥在溫暖且陽光充足的環境中茁壯成長。
                 </p>
-                <p class="dot-p">• 每株植物都是獨一無二的；尺寸和形狀隨季節變化，因此所有測量值均顯示為範圍</p>
-                <p class="dot-p">• 天堂鳥有分裂的葉子，這是一種正常的適應性預防措施，可以幫助植物在其原生棲息地承受強風</p>
-                <p class="dot-p">• 中型植物從土壤線到葉子頂部的高度在20 公分到35 公分之間</p>
+                <p class="dot-p">• 每株植物都是獨一無二的；尺寸和形狀隨季節變化，因此所有測量值均顯示為範圍。</p>
+                <p class="dot-p">• 天堂鳥有分裂的葉子，這是一種正常的適應性預防措施，可以幫助植物在其原生棲息地承受強風。</p>
+                <p class="dot-p">• 中型植物從土壤線到葉子頂部的高度在20 公分到35 公分之間。</p>
                 
             </div>
             <div class="greyline"></div>
@@ -336,7 +645,7 @@
                     </div>
                     <div class="product-details-option-bottonbox">
                         <div class="option-botton">15公分以下</div>
-                        <div class="option-botton">15-30公分</div>
+                        <div class="option-botton sbtn2">15-30公分</div>
                         <div class="option-botton">30-60公分</div>
                     </div>
                 </div>
@@ -348,7 +657,7 @@
                     <div class="product-details-option-bottonbox">
                         <div class="option-botton">種植盆</div>
                         <div class="option-botton">授予盆</div>
-                        <div class="option-botton">海德盆</div>
+                        <div class="option-botton pbtn3">海德盆</div>
                         <div class="option-botton">升級盆</div>
                     </div>
                 </div>
@@ -358,11 +667,11 @@
                         3. 選擇盆器顏色
                     </div>
                     <div class="product-details-option-colorbox">
-                        <div class="option-color"></div>
-                        <div class="option-color"></div>
-                        <div class="option-color"></div>
-                        <div class="option-color"></div>
-                        <div class="option-color"></div>
+                        <div class="option-color color1"></div>
+                        <div class="option-color color2"></div>
+                        <div class="option-color color3"></div>
+                        <div class="option-color color4"></div>
+                        <div class="option-color color5"></div>
                     </div>
                 </div>    
             </div>
@@ -372,8 +681,107 @@
                     $1,230
                 </div>
                 <div class="product-details-add">
-                    加入購物車
+                    <a href="#">加入購物車</a>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="greyline"></div>
+    <div class="newpin-container">
+        <div class="newpin-tietle">
+            <h2>你可能會喜歡</h2>
+        </div>
+        <div class="newpin-scroll">
+            <div class="newpin-cards">
+                <div class="newpin-card">
+                    <div class="newpin-item">
+                        <a href="../products/23-bird-of-paradise.html"><img src="../images/plants/25.jpg" alt=""></a>
+                    </div>
+                    <div class="newpin-text">
+                        <div class="newpin-text-tietle">
+                            <a href="../products/23-bird-of-paradise.html"><h3>翠綠終章</h3></a>
+                        </div>
+                        <div class="newpin-text-price">
+                            <p>$ 1,230 - 2,160</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="newpin-card">
+                    <div class="newpin-item">
+                        <a href="../products/23-bird-of-paradise.html"><img src="../images/plants/29.jpg" alt=""></a>
+                    </div>
+                    <div class="newpin-text">
+                        <div class="newpin-text-tietle">
+                            <a href="../products/23-bird-of-paradise.html"><h3>諾福克島松</h3></a>
+                        </div>
+                        <div class="newpin-text-price">
+                            <p>$ 1,230 - 2,160</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="newpin-card">
+                    <div class="newpin-item">
+                        <a href="products/23-bird-of-paradise.html"><img src="../images/plants/24.jpg" alt=""></a>
+                    </div>
+                    <div class="newpin-text">
+                        <div class="newpin-text-tietle">
+                            <a href="products/23-bird-of-paradise.html"><h3>花葉竹芋</h3></a>
+                        </div>
+                        <div class="newpin-text-price">
+                            <p>$ 1,230 - 2,160</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="newpin-card">
+                    <div class="newpin-item">
+                        <a href="products/23-bird-of-paradise.html"><img src="../images/plants/21.jpg" alt=""></a>
+                    </div>
+                    <div class="newpin-text">
+                        <div class="newpin-text-tietle">
+                            <a href="products/23-bird-of-paradise.html"><h3>椒葉鈍草</h3></a>
+                        </div>
+                        <div class="newpin-text-price">
+                            <p>$ 1,230 - 2,160</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-container-container">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-infos">
+                    <div class="footer-info-1st">
+                        <div class="footer-info-title footer-info-1st-title">綠化無限</div>
+                        <div class="footer-info-text-1st">
+                            <div class="footer-info-text"><a href="">隱私政策</a></div>
+                            <div class="footer-info-text"><a href="">服務條款</a></div>
+                            <div class="footer-info-text"><a href="">門市資訊</a></div>
+                            <div class="footer-info-text"><a href="">會員權益</a></div>
+                            <div class="footer-info-text"><a href="">加入我們</a></div>
+                        </div>
+                    </div>
+                    <div class="footer-info-2nd">
+                        <div class="footer-info-title footer-info-2nd">聯絡資訊</div>
+                            <div class="footer-info-text-2nd">
+                            <div class="footer-info-text footer-info-text-2nd">客服專線：03 - 2560883</div>
+                            <div class="footer-info-text footer-info-text-2nd">客服時間：週二至週六 9:00-15:00</div>
+                            <div class="footer-info-text footer-info-text-2nd">信箱：<a href="">service.taiwan@green.div.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-logos">
+                    <div class="footer-logos-logo"><img src="../images/logo/GreenDivLogo-07.svg"></div>
+                    <div class="footer-logos-icons">
+                        <div class="footer-icon"><a href=""><img src="../images/icons/icon _Facebook_.svg"></a></div>
+                        <div class="footer-icon"><a href=""><img src="../images/icons/icon _Instagram_.svg"></a></div>
+                        <div class="footer-icon"><a href=""><img src="../images/icons/icon _YouTube_.svg"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-buttom">
+            <p>Copyright © 台灣昆迪芙股份有限公司 All Rights Reserved. 本網站為緯育TibaMe前端工程師班第80期學員專題作品，本平台僅供學習、展示之用。</p>
             </div>
         </div>
     </div>
