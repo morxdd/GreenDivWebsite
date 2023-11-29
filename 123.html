@@ -3,77 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>一般問題 | 設計服務 | 植物護理問題</title> <!-- 更改頁面標題 -->
 </head>
 <style>
-    .menu-item > *:first-child {
-    flex: 1;
-    line-height: 38px;
-    text-align: center;
-}
-  
-.menu-item > *:first-child:hover {
-    background: #ccc;
-    cursor: pointer;
-}
-  
-.menu-item:hover .dropdown {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+    .tabs-wrapper {
+        background-color: #f2f2f2;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .tab-content {
+        max-width: 500px; /* 或使用百分比 */
+        width: 100%;
+        height: auto; /* 讓高度根據內容調整 */
+        overflow: auto;
+        display: inline-block;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        text-align: left;
+    }
+
+    .tab {
+    padding: 10px 30px;
+    /* 如果您希望所有標籤具有相同的固定寬度，請取消注釋下一行並設置合適的寬度 */
     width: 150px;
-    top: 38px;
-    padding: 8px;
-    border: solid 1px #ccc;
-    list-style: none;
-    line-height: 38px;
+    background-color: #808080;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
-  
-  .menu-item .dropdown {
+    .tab-container {
+    display: flex; /* 使用 Flexbox */
+    justify-content: space-around; /* 平均分佈 */
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+    .tab:hover, .tab.active {
+        background-color: #20B2AA;
+    }
+
+    .tab-content {
+    clear: both;
+    padding: 20px;
+    border: 1px solid #4CAF50;
+    border-top: none;
     display: none;
-    font-size: 1.2rem;
-    font-weight: bolder;
+    width: 500px; /* 您可以根據需要調整寬度 */
+    height: 300px; /* 您可以根據需要調整高度 */
+    overflow: auto; /* 確保內容過多時可以滾動 */
 }
+.co1-buttons-submit, .co2-buttons-submit {
+    background-color: #20B2AA; /* 湖水綠色 */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block; /* 使按鈕並列 */
+    margin: 5px;
+    border: none;
+}
+.co2-buttons-picsub {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block; /* 使按鈕並列 */
+    margin: 5px;
+    border: 1px solid #808080;
+}
+.star {
+    color: red; /* 設置星號為紅色 */
+}
+
+/* 按鈕懸停效果 */
+.co1-buttons-submit:hover, .co2-buttons-submit:hover, .co2-buttons-picsub:hover {
+    opacity: 0.8;
+}
+
 </style>
 <body>
-    <nav class="navigation">
-        <ul class="menu">
-            <li class="menu-item">
-                <label for="menu-item-1"><a class="active" href="index.html">首頁</a></label>
-                <input id="menu-item-1" type="checkbox" hidden="hidden">
-                <ul class="dropdown">
-                    <li>分頁</li>
-                    <li>分頁二</li>
-                </ul>
-             </li>
-            
-            <li class="menu-item">
-                <label for="menu-item-2"><a href="HTML.html">HTML</a></label>
-                <input id="menu-item-2" type="checkbox" hidden="hidden">
-                    <ul class="dropdown">
-                        <li>Item 2-1</li>
-                        <li>Item 2-1</li>
-                    </ul>
-            </li>   
-            
-            <li class="menu-item">
-                <label for="menu-item-3"><a href="CSS.html">CSS</a></label>
-                <input id="menu-item-3" type="checkbox" hidden="hidden">
-                    <ul class="dropdown">
-                        <li>Item 3-1</li>
-                        <li>Item 3-1</li>
-                    </ul>
-            </li>
-            <li class="menu-item">
-                <label for="menu-item-4">
-                <ahref="JavaScript.html">JavaScript</a</label>
-                <input id="menu-item-4" type="checkbox" hidden="hidden">
-                    <ul class="dropdown">
-                        <li>Item 4-1</li>
-                        <li>Item 4-1</li>
-                    </ul>
-            </li> 
-        </ul>
-    </nav>
+    <div class="tabs-wrapper">
+        <div class="tab-container">
+            <div class="tab active" onclick="openTab('tab1', event)">一般問題</div>
+            <div class="tab" onclick="openTab('tab2', event)">設計服務</div>
+            <div class="tab" onclick="openTab('tab3', event)">植物護理問題</div>
+        </div>        
+        <div id="tab1" class="tab-content" style="display: block;">
+        <!-- 頁面一的內容 -->
+            <p><span class="star">*</span>姓名 / 公司名</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>e-mail</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>電話號碼</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>詳細資訊</p>
+            <input type="text" class="text-input">
+            <div class="co1-buttons">
+                <div class="co1-buttons-submit">送出</div>        
+            </div>
+        </div>
+        <div id="tab2" class="tab-content">
+            <p>若您對我們的設計服務感興趣，請填寫以下表格，我們將盡快聯繫您。請提供專案細節，以便我們全面理解您的需求，並制定適合的方案。根據專案大小，我們可能需現場評估空間和採光。預算在10萬台幣以下的小型專案，可免現場諮詢。</p>
+            <p><span class="star">*</span>姓名 / 公司名</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>e-mail</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>電話號碼</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>您的預算</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>詳細資訊</p>
+            <input type="text" class="text-input">
+            <div class="co2-buttons">
+                <div class="co2-buttons-picsub">上傳您的空間照片</div> 
+                <div class="co2-buttons-submit">送出</div>        
+            </div>
+        </div>
+        <div id="tab3" class="tab-content">
+            <p>回答以下問題可協助我們收集所需資訊，以便解決植物健康問題。<br>
+            我們將會儘快回覆您我們的診斷和植物護理建議。</p>
+            <p><span class="star">*</span>e-mail</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>訂單編號</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>種植的盆器類型</p>
+            <select class="text-input">
+                <option value="">請選擇盆器類型</option>
+                <option value="nursery-pot">苗圃盆</option>
+                <option value="standard-planter">標準盆</option>
+                <option value="self-watering-container">自動澆水花盆</option>
+            </select>
+            <p><span class="star">*</span>與窗戶的距離</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>最近的窗戶朝向？</p>
+            <select class="text-input">
+                <option value="">請選擇方向</option>
+                <option value="north">北</option>
+                <option value="east">東</option>
+                <option value="south">南</option>
+                <option value="west">西</option>
+            </select>
+            <p><span class="star">*</span>上次澆水時間/水量/頻率</p>
+            <input type="text" class="text-input">
+            <p><span class="star">*</span>您的植物出現哪些症狀？（如：葉子脫落、變色、下垂等）</p>
+            <input type="text" class="text-input">
+            <div class="co2-buttons">
+                <div class="co2-buttons-picsub">上傳您的植物照片</div> 
+                <div class="co2-buttons-submit">送出</div>        
+            </div>
+        </div>
+    </div>
+<script>
+    function openTab(tabName, event) {
+    // 獲取所有標籤內容並隱藏
+    var i, tabcontent, tabs;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // 獲取所有標籤並移除 'active' 類
+    tabs = document.getElementsByClassName("tab");
+    for (i = 0; i < tabs.length; i++) {
+        tabs[i].className = tabs[i].className.replace(" active", "");
+    }
+
+    // 顯示當前標籤的內容並添加 'active' 類到標籤
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.className += " active";
+}
+</script>
 </body>
-</html>
