@@ -524,13 +524,22 @@
             background-position: center; /* 背景图片居中 */
             display: block;
         }
-        .care-card{
-            background: linear-gradient(to bottom, #B66932, #8B4E22);
+        
+        .care-card {
+            background: #000;
             width: calc(25% - 10px);
             border-radius: 48px;
             align-self: stretch;
             position: relative;
+            overflow: hidden;
         }
+        .care-card a {
+            display: block;
+            color: inherit; /* 可选，继承文字颜色 */
+            background: linear-gradient(to bottom, #B66932, #8B4E22);
+            width: 100%;
+            height: 100%;
+}
         .care-card-content1{
             color: #fff;
             font-size: 30px;
@@ -583,7 +592,6 @@
             align-items: center;
             border-radius: 68px;
             position: relative;
-
         }
         .eco-box-item{
             background-color: violet;
@@ -599,12 +607,21 @@
             display: block;
         }
         .eco-card{
-            background: linear-gradient(to bottom, #234382, #0D1E5B);
+            background: #000;
             width: calc(25% - 10px);
             border-radius: 48px;
             align-self: stretch;
             position: relative;
+            overflow: hidden;
         }
+        .eco-card a {
+            display: block;
+            color: inherit; /* 可选，继承文字颜色 */
+            background: linear-gradient(to bottom, #234382, #0D1E5B);
+            width: 100%;
+            height: 100%;
+        }
+
         .eco-card-content1{
             color: #fff;
             font-size: 30px;
@@ -950,7 +967,7 @@
             </div>
             <div class="banner-textbox">
                 <div class="banner-textbox-title">深植生活，<br>繽紛你的綠意空間。</div>
-                <div class="banner-textbox-text"><a href="">所有商品</a></div>
+                <div class="banner-textbox-text"><a href="goods.html">所有商品</a></div>
             </div>
         </div>
     </div>
@@ -993,7 +1010,7 @@
         </div>
         <div class="featured-row">
             <div class="featured-row-col">
-                <a href="">
+                <a href="goods.html">
                 <div class="featured-item fi1">
                     <div class="featured-item-text">
                         <div class="feature-arr">
@@ -1002,7 +1019,7 @@
                         <p>寵物友善</p>
                     </div>
                 </div></a>
-                <a href="">
+                <a href="goods.html">
                 <div class="featured-item fi2">
                     <div class="featured-item-text">
                         <div class="feature-arr">
@@ -1013,7 +1030,7 @@
                 </div></a>
             </div>
             <div class="featured-row-col">
-                <a href="">
+                <a href="goods.html">
                 <div class="featured-item fi3">
                     <div class="featured-item-text">
                         <div class="feature-arr">
@@ -1022,7 +1039,7 @@
                         <p>弱光性</p>
                     </div>
                 </div></a>
-                <a href="">
+                <a href="goods.html">
                 <div class="featured-item fi4">
                     <div class="featured-item-text">
                         <div class="feature-arr">
@@ -1043,11 +1060,11 @@
             <div class="newpin-cards">
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/25.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/25.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
-                            <a href=""><h3>翠綠終章</h3></a>
+                            <a href="products/23-bird-of-paradise.html"><h3>翠綠終章</h3></a>
                         </div>
                         <div class="newpin-text-price">
                             <p>$ 1,230 - 2,160</p>
@@ -1056,11 +1073,11 @@
                 </div>
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/23.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/23.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
-                            <a href=""><h3>極樂鳥</h3></a>
+                            <a href="products/23-bird-of-paradise.html"><h3>天堂鳥</h3></a>
                         </div>
                         <div class="newpin-text-price">
                             <p>$ 1,230 - 2,160</p>
@@ -1069,11 +1086,11 @@
                 </div>
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/24.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/24.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
-                            <a href=""><h3>花葉竹芋</h3></a>
+                            <a href="products/23-bird-of-paradise.html"><h3>花葉竹芋</h3></a>
                         </div>
                         <div class="newpin-text-price">
                             <p>$ 1,230 - 2,160</p>
@@ -1082,11 +1099,11 @@
                 </div>
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/21.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/21.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
-                            <a href=""><h3>椒葉鈍草</h3></a>
+                            <a href="products/23-bird-of-paradise.html"><h3>椒葉鈍草</h3></a>
                         </div>
                         <div class="newpin-text-price">
                             <p>$ 1,230 - 2,160</p>
@@ -1105,7 +1122,7 @@
                 <div class="np-dot"></div>
             </div>
             <div class="newpin-buttom-gogo">
-                <a href=""><p>查看全部新品</p></a>
+                <a href="goods.html"><p>查看全部新品</p></a>
             </div>
         </div>        
     </div>
@@ -1119,7 +1136,7 @@
             <div class="newpin-cards">
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/29.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/29.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
@@ -1132,11 +1149,11 @@
                 </div>
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/28.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/28.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
-                            <a href=""><h3>橄欖樹</h3></a>
+                            <a href="products/23-bird-of-paradise.html"><h3>橄欖樹</h3></a>
                         </div>
                         <div class="newpin-text-price">
                             <p>$ 1,230 - 2,160</p>
@@ -1145,7 +1162,7 @@
                 </div>
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/31.jpg" alt=""></a>
+                        <a href="products/23-bird-of-paradise.html"><img src="images/plants/31.jpg" alt=""></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
@@ -1158,7 +1175,7 @@
                 </div>
                 <div class="newpin-card">
                     <div class="newpin-item">
-                        <a href=""><img src="images/plants/12.jpg" alt=""></a>
+                        <a href=""><img src="images/plants/12.jpg" alt="products/23-bird-of-paradise.html"></a>
                     </div>
                     <div class="newpin-text">
                         <div class="newpin-text-tietle">
@@ -1181,7 +1198,7 @@
                 <div class="np-dot"></div>
             </div>
             <div class="newpin-buttom-gogo">
-                <a href=""><p>查看熱門商品</p></a>
+                <a href="goods.html"><p>查看熱門商品</p></a>
             </div>
         </div>        
     </div>
@@ -1192,31 +1209,37 @@
                 <div class="care-box-item"></div>
             </div>
         </div>
+        
         <div class="care-card">
-            <div class="care-card-content1">
-                <p>護理指南精選</p>
-            </div>
-            <div class="divider"></div>
-            <div class="care-arr">
-                <img src="images/icons/arrow.svg" alt="">
-            </div>
-            <div class="care-card-content2">
-                <p>掌握綠色秘訣：<br>照顧植物，從此處開始。</p>
-            </div>
+            <a href="" class="care-card-link">
+                <div class="care-card-content1">
+                    <p>護理指南精選</p>
+                </div>
+                <div class="divider"></div>
+                <div class="care-arr">
+                    <img src="images/icons/arrow.svg" alt="">
+                </div>
+                <div class="care-card-content2">
+                    <p>掌握綠色秘訣：<br>照顧植物，從此處開始。</p>
+                </div>
+            </a>
         </div>
+        
     </div>
     <div class="eco-container">
         <div class="eco-card">
-            <div class="eco-card-content1">
-                <p>為求永續發展</p>
-            </div>
-            <div class="divider"></div>
-            <div class="care-arr">
-                <img src="images/icons/arrow.svg" alt="">
-            </div>
-            <div class="eco-card-content2">
-                <p>探索我們對地球的承諾：<br>由內而外的環保實踐。</p>
-            </div>
+            <a href="about.html" class="eco-card-link">
+                <div class="eco-card-content1">
+                    <p>為求永續發展</p>
+                </div>
+                <div class="divider"></div>
+                <div class="care-arr">
+                    <img src="images/icons/arrow.svg" alt="">
+                </div>
+                <div class="eco-card-content2">
+                    <p>探索我們對地球的承諾：<br>由內而外的環保實踐。</p>
+                </div>
+            </a>
         </div>
         <div class="eco-row">
             <div class="eco-box">
@@ -1267,7 +1290,7 @@
             </div>
         </div>
         <div class="server-buttom">
-            <a href=""><p>探索我們的服務</p></a>
+            <a href="server.html"><p>探索我們的服務</p></a>
         </div>
     </div>
     <div class="comment-container">
@@ -1297,7 +1320,7 @@
                 <div class="comment-card">
                     <div class="comment-card-name">Hanni P.</div>
                     <div class="comment-card-stars">666666</div>
-                    <div class="comment-card-text"><p>Oh my Oh my God! 我的極樂鳥剛剛到，放在辦公室超霸氣，同事們都問我哪裡買的！希望這次不會又死掉了...==</p></div>
+                    <div class="comment-card-text"><p>Oh my Oh my God! 我的天堂鳥剛剛到，同事們都問我哪裡買的！希望這次不會又死掉了...==</p></div>
                 </div>
                 <div class="comment-card">
                     <div class="comment-card-name">Taylor S.</div>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>天堂鳥 | 綠域植栽</title>
+        <link rel="stylesheet" href="../css/grid.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="../images/logo/logo_ico.svg" type="image/x-icon">
+        <style>
+            body{
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 60px;
+            background-color: #fff;
+            max-width: 1520px;
+            margin: auto;
+        }
+        .logo{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .logo img{
+            width: 120px;
+        }
+        nav {
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
+        nav .main-ul{
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        nav .main-ul a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;         
+        }
+
+        nav .main-ul a:hover{
+            transition: none;
+            font-weight: 700;
+        }
+        nav .li-a a{
+            font-weight: 700;
+        }
+        .about-ul{
+            position: absolute; 
+            width: 180px;
+            height: 100px;
+            
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            left: 50%;
+            transform: translate(-50%, 0);
+            border-radius: 20px;
+            display: none;
+            gap: 8px;
+            background-color: #fff6;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid #ccc;
+            z-index: 1;
+            box-shadow: 0 4px 10px #0002;
+        }
+        .about-ul a{
+            height: 20px;
+            width: 120px;
+        }
+        .main-about-li{
+            position: relative;
+        }
+        .main-about-li:hover .about-ul {
+            display: flex;
+        }
+        .main-about-li:hover .about-ul a {
+            height: 10px;
+            font-weight: 300;
+        }
+        .about-ul a:hover {
+            font-weight: 700 !important;
+        }
+        nav .icons{
+            display: flex;
+            flex-direction: row;    
+            gap: 30px;
+            margin-left: 20px;
+            margin-right: 20px;        
+        }
+        .icon-item{
+            width: 40px;
+        }
+        .icon-item a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            background-color: #fff;
+            /* width: 100px; */
+            /* height: 20px; */
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .icon-item a:hover{
+            /* color: #655D5D; */
+            color: #0E677B;
+            background-color: #f5f5f5;
+        }
+        .product-container {
+            max-width: 1500px ;
+            display: flex;
+            justify-content: space-between;
+            margin: 0px 20px 20px 20px;
+            flex-direction: row;
+
+        }
+        @media (min-width: 1530px) {
+            .product-container {
+                margin: 0px auto 20px auto; 
+            }
+        }
+        .product-subcol {
+            width: calc(16.666666% - 10px);
+            background-color: cornflowerblue;
+            max-height: calc((100vw - 40px) / 2);
+            overflow-y: auto;
+        }
+        /* 隐藏 Chrome、Safari 等基于 WebKit 的浏览器的滚动条 */
+.product-subcol::-webkit-scrollbar {
+    display: none;
+}
+
+/* 隐藏 Firefox 的滚动条 */
+.product-subcol {
+    scrollbar-width: none;
+}
+        .product-subcol-imagebox {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #444;
+            border-radius: 48px;
+            margin-bottom: 20px;
+        }
+        .product-subcol-imagebox:last-child {
+            margin-bottom: 0;
+        }
+        .product-maincol-imagebox {
+            width: calc(50% - 10px);
+            aspect-ratio: 1/1;
+            background-color: cornflowerblue;
+            border-radius: 48px;
+            overflow: hidden;
+        }
+        .product-maincol-imagebox img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保图片不失真 */
+        }
+        .product-details-col {            
+            width: calc(33.333333% - 10px);
+            gap: 20px;
+            overflow-y: auto;
+        }
+        .product-details-col::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* 隐藏 Firefox 的滚动条 */
+        .product-details-col {
+            scrollbar-width: none;
+        }
+        .product-details-topbox{
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            height: 40px;
+            margin: 12px 0 12px 0;
+            box-sizing: border-box;
+            padding: 0 20px;
+        }
+        .product-details-title{
+            font-size: 32px;
+            font-weight: 300;
+            color: #444;
+            display: block;
+        }
+        .product-details-carebut a{
+            background-color: #fff;
+            color: #444;
+            padding: 6px 20px;
+            display: block;
+            text-decoration: none;
+            border-radius: 20px;
+            border: 1px solid #777;
+        }
+        .greyline {
+            width: 100%;
+            height: 1px;
+            background-color: #777;
+            margin-bottom: 20px;
+        }
+        .product-details-textbox {
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            padding: 0 20px;
+            line-height: 1.5;
+            gap: 20px;
+            display: flex;
+            justify-self: start;
+            flex-direction: column;
+        }
+        .product-details-textbox > .dot-p {
+            background-color: #ccc;
+            text-indent: -1em; /* 将首行向左缩进 */
+            padding-left: 1em; /* 为了对齐，向左添加相同大小的内边距 */
+        }
+        .product-details-option{
+            background-color: antiquewhite;
+            margin-bottom: 12px;
+        }
+        .product-details-option-text {
+            font-size: 20px;
+            margin-bottom: 12px;
+            letter-spacing: .1em;
+        }
+        .product-details-option-bottonbox {
+            box-sizing: border-box;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .option-botton {
+            background-color: darkseagreen;
+            display: block;
+            padding: 12px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .product-details-option-colorbox {
+            box-sizing: border-box;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .option-color {
+            background-color: #fa0;
+            width: 36px;
+            height: 36px;
+            border-radius: 200px;
+            cursor: pointer;
+        }
+
+
+        </style>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html"><img src="../images/logo/GreenDivLogo.svg" alt="Logo"></a>
+        </div>
+        <nav>
+            <ul class="main-ul">
+                <li class="main-li li-a"><a href="../goods.html">植物</a></li>
+                <li class="main-li li-b"><a href="">盆器與配件</a></li>
+                <li class="main-li li-c"><a href="">護理指南</a></li>
+                <li class="main-li li-d"><a href="../server.html">服務</a></li>
+                <li class="main-li main-about-li li-e">
+                    <a href="../about.html">關於</a>
+                    <ul class="about-ul">
+                        <li class="about-li"><a href="../about.html">關於我們</a></li>
+                        <li class="about-li"><a href="../contact.html">聯絡我們</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="icons">
+                <div class="icon-item"><a href=""><img src="../images/icons/serch.svg" alt=""></a></div>
+                <div class="icon-item"><a href=""> <img src="../images/icons/SquirrelSetup.svg" alt=""></a></div>
+                <div class="icon-item"><a href=""> <img src="../images/icons/shop.svg" alt=""></a></div>
+            </div>
+        </nav>
+    </header>
+    <div class="product-container">
+        <div class="product-subcol">
+            <div class="product-subcol-imagebox"></div>
+            <div class="product-subcol-imagebox"></div>
+            <div class="product-subcol-imagebox"></div>
+            <div class="product-subcol-imagebox"></div>
+        </div>
+        <div class="product-maincol-imagebox"><img src="../images/plants/23.jpg" alt=""></div>
+        <div class="product-details-col">
+            <div class="product-details-topbox">
+                <div class="product-details-title">
+                    <h3>天堂鳥</h3>
+                </div>
+                <div class="product-details-carebut">
+                    <a href="#">護理指南</a>
+                </div>
+            </div>
+            <div class="greyline"></div>
+            <div class="product-details-textbox">
+                <p>
+                    天堂鳥擁有寬闊、生氣勃勃的綠葉，為任何房間帶來一絲熱帶風情。它因其獨特的花朵而得名，花朵類似於飛行中色彩鮮豔的鳥類（儘管在氣候溫和的室內植物環境中，這些花朵通常不會開花）。天堂鳥在溫暖且陽光充足的環境中茁壯成長。
+                </p>
+                <p class="dot-p">• 每株植物都是獨一無二的；尺寸和形狀隨季節變化，因此所有測量值均顯示為範圍</p>
+                <p class="dot-p">• 天堂鳥有分裂的葉子，這是一種正常的適應性預防措施，可以幫助植物在其原生棲息地承受強風</p>
+                <p class="dot-p">• 中型植物從土壤線到葉子頂部的高度在20 公分到35 公分之間</p>
+                
+            </div>
+            <div class="greyline"></div>
+            <div class="product-details-optionsbox">
+                <div class="product-details-option">
+                    <div class="product-details-option-text">
+                        1. 選擇植物尺寸
+                    </div>
+                    <div class="product-details-option-bottonbox">
+                        <div class="option-botton">15公分以下</div>
+                        <div class="option-botton">15-30公分</div>
+                        <div class="option-botton">30-60公分</div>
+                    </div>
+                </div>
+                <div class="greyline"></div>
+                <div class="product-details-option">
+                    <div class="product-details-option-text">
+                        2. 選擇盆器
+                    </div>
+                    <div class="product-details-option-bottonbox">
+                        <div class="option-botton">種植盆</div>
+                        <div class="option-botton">授予盆</div>
+                        <div class="option-botton">海德盆</div>
+                        <div class="option-botton">升級盆</div>
+                    </div>
+                </div>
+                <div class="greyline"></div>
+                <div class="product-details-option">
+                    <div class="product-details-option-text">
+                        3. 選擇盆器顏色
+                    </div>
+                    <div class="product-details-option-colorbox">
+                        <div class="option-color"></div>
+                        <div class="option-color"></div>
+                        <div class="option-color"></div>
+                        <div class="option-color"></div>
+                        <div class="option-color"></div>
+                    </div>
+                </div>    
+            </div>
+            <div class="greyline"></div>
+            <div class="product-details-pricebox">
+                <div class="product-details-price">
+                    $1,230
+                </div>
+                <div class="product-details-add">
+                    加入購物車
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function adjustHeight() {
+    var mainImgBox = document.querySelector('.product-maincol-imagebox');
+
+    if (mainImgBox) {
+        var width = mainImgBox.offsetWidth; // 获取主图区的宽度
+        var subCol = document.querySelector('.product-subcol');
+        var detailsCol = document.querySelector('.product-details-col');
+
+        // 设置左栏和右栏的最大高度为主图区的宽度
+        if (subCol) {
+            subCol.style.maxHeight = width + 'px';
+        }
+        if (detailsCol) {
+            detailsCol.style.maxHeight = width + 'px';
+        }
+    }
+}
+
+// 页面加载和窗口大小变化时调整高度
+window.onload = adjustHeight;
+window.addEventListener('resize', adjustHeight);
+
+</script>
+</body>
+</html>
