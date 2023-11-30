@@ -17,6 +17,15 @@
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #eee;
         }
+        ::selection {
+            background: rgba(151, 228, 74, 0.5); /* 黄绿色背景，50% 不透明度 */
+            color: black; /* 文字颜色 */
+        }
+
+            ::-moz-selection {
+            background: rgba(151, 228, 74, 0.5); 
+            color: black;
+        }
         .header-container {
             background: #fff;
             width: 100%;
