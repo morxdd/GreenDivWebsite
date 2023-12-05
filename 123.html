@@ -1,229 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>測試 | 綠域植栽</title>
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="images/logo/logo_ico.svg" type="image/x-icon">
+    <title>迷宮遊戲</title>
     <style>
-        body{
-            font-family: 'Noto Sans TC', sans-serif;
-
-        }
-        ::selection {
-            background: rgba(151, 228, 74, 0.5); /* 黄绿色背景，50% 不透明度 */
-        }
-        ::-moz-selection {
-            background: rgba(151, 228, 74, 0.5); 
-        }
-        header{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            height: 60px;
-            background-color: #fff;
-            max-width: 1520px;
-            margin: auto;
-        }
-        .logo{
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        .logo img{
-            width: 120px;
-        }
-        nav {
-            display:flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-        }
-        nav .main-ul{
-            display: flex;
-            flex-direction: row;
-            flex-grow: 1;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-        nav .main-ul a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #000;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 400;         
-        }
-
-        nav .main-ul a:hover{
-            transition: none;
-            font-weight: 700;
-        }
-
-        .about-ul{
-            position: absolute; 
-            width: 180px;
-            height: 100px;
-            
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            left: 50%;
-            transform: translate(-50%, 0);
-            border-radius: 20px;
-            display: none;
-            gap: 8px;
-            background-color: #fff6;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid #ccc;
-            z-index: 1;
-            box-shadow: 0 4px 10px #0002;
-        }
-        .about-ul a{
-            height: 20px;
-            width: 120px;
-        }
-        .main-about-li{
-            position: relative;
-        }
-        .main-about-li:hover .about-ul {
-            display: flex;
-        }
-        .main-about-li:hover .about-ul a {
-            height: 10px;
-            font-weight: 300;
-        }
-        .about-ul a:hover {
-            font-weight: 700 !important;
-        }
-        nav .icons{
-            display: flex;
-            flex-direction: row;    
-            gap: 30px;
-            margin-left: 20px;
-            margin-right: 20px;        
-        }
-        .icon-item{
-            width: 40px;
-        }
-        .icon-item a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #000;
-            background-color: #fff;
-            /* width: 100px; */
-            /* height: 20px; */
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-        }
-        .icon-item a:hover{
-            /* color: #655D5D; */
-            color: #0E677B;
-            background-color: #f5f5f5;
-        }
-        .banner-image {
-            width: 100%;
-            height: auto;
-            border-radius: 48px; /* 預設圓角大小 */        
-        }
-        .banner-row{
-            position: relative;   
-            display: flex;
-            align-items: center;
-        }
-        .banner-textbox{
-            position: absolute;
-            left: 68%;    
-            color: #fff;
-        }
-        .banner-textbox-title{
-            font-size: 48px;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-            line-height: 1.36;
-            font-weight: 600;
-        }
-        @media (width < 1200px) {
-            .banner-textbox-title {
-                font-size: 2.5vw;
-            }
-        }
-        .banner-textbox-text a{ 
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #fff;
-            font-weight: 400;
-            background-color: #fff6;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid #ccc;
-            /* padding: 12px; */
-            transition: background-color 0.2s ease;
-            width: 7.2em;
-            height: 40px;
-            line-height: 40px;
+        body {
             text-align: center;
-            display: block;
-            letter-spacing: .1em;
+            font-family: Arial, sans-serif;
         }
-        .banner-textbox-text a:hover{
-            background-color: #fff3;
+
+        #gameArea {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            position: relative;
+            border: 2px solid black;
+            background-color: #f0f0f0;
         }
-        
-</style>
+
+        .wall {
+            position: absolute;
+            background-color: black;
+        }
+
+        #player {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background-color: blue;
+            border-radius: 5px;
+        }
+
+        #goal {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background-color: green;
+            border-radius: 5px;
+        }
+        #player {
+            width: 20px;
+            height: 20px;
+            /* 其他樣式保持不變 */
+        }
+
+        #goal {
+            width: 20px;
+            height: 20px;
+            /* 其他樣式保持不變 */
+        }
+
+        /* 添加更多複雜的牆壁 */
+        .wall {
+            /* 原有樣式保持不變 */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="images/logo/GreenDivLogo.svg" alt="Logo"></a>
-        </div>
-        <nav>
-            <ul class="main-ul">
-                <li class="main-li li-a"><a href="goods.html">植物</a></li>
-                <li class="main-li li-b"><a href="">盆器與配件</a></li>
-                <li class="main-li li-c"><a href="">護理指南</a></li>
-                <li class="main-li li-d"><a href="server.html">服務</a></li>
-                <li class="main-li main-about-li li-e">
-                    <a href="about.html">關於</a>
-                    <ul class="about-ul">
-                        <li class="about-li"><a href="about.html">關於我們</a></li>
-                        <li class="about-li"><a href="contact.html">聯絡我們</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="icons">
-                <div class="icon-item"><a href=""><img src="images/icons/serch.svg" alt=""></a></div>
-                <div class="icon-item"><a href=""> <img src="images/icons/SquirrelSetup.svg" alt=""></a></div>
-                <div class="icon-item"><a href=""> <img src="images/icons/shop.svg" alt=""></a></div>
-            </div>
-        </nav>
-    </header>
-    <div class="container banner-container">
-        <div class="row banner-row">
-            <div class="col-12 banner-img">
-                <img src="images/other/banner.jpg" alt="Banner" class="banner-image">
-            </div>
-            <div class="banner-textbox">
-                <div class="banner-textbox-title"><h1>深植生活，<br>繽紛綠意空間。</h1></div>
-                <div class="banner-textbox-text"><a href="goods.html">來去逛逛</a></div>
-            </div>
-        </div>
+    <div id="gameArea">
+        <div id="player"></div>
+        <div id="goal" style="top: 370px; left: 370px;"></div>
+        <!-- 添加更複雜的迷宮牆壁 -->
+        <div class="wall" style="top: 0px; left: 100px; width: 20px; height: 300px;"></div>
+        <div class="wall" style="top: 100px; left: 200px; width: 20px; height: 300px;"></div>
+        <!-- 在此處可繼續添加牆壁 -->
     </div>
-    <div class="server-buttom">
-        <a href="server.html"><p>探索我們的服務</p></a>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const player = document.getElementById('player');
+    let playerX = 0;
+    let playerY = 0;
+    const stepSize = 10;
+    const timeLimit = 60000; // 60秒時間限制
+    let timer;
 
+    document.addEventListener('keydown', function(event) {
+        /* ...原有代碼... */
+    });
+
+    function startGame() {
+        timer = setTimeout(function() {
+            alert('時間到！遊戲結束！');
+            window.location.reload();
+        }, timeLimit);
+    }
+
+    function checkGoal() {
+        /* ...原有代碼... */
+        clearTimeout(timer); // 到達終點時停止計時
+    }
+
+    startGame(); // 遊戲開始時啟動計時器
+});
+
+    </script>
 </body>
+</html>
